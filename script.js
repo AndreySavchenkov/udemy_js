@@ -1,17 +1,45 @@
-var money = prompt('Ваш бюджет на месяц?', ); 
-var time = prompt('Введите дату в формате YYYY-MM-DD', );
+let money, time;
 
-var appData = {
-    budget : money,
+function start() {
+    money = +prompt('Ваш бюджет на месяц?', '');
+    time = prompt('Введите дату в формате YYYY-MM-DD', '');
+
+    while(isNaN(money) || money == '' || money == null) {
+        money = +prompt('Ваш бюджет на месяц?', '')
+    }
+}
+start();
+
+
+let appData = {
+    budget: money,
+    expeses: {},
+    optionalExpenses: {},
+    income: [],
     timeData: time,
-    optionalExpenses : {
-        itemOfExpenditure: cost
-    },
-    income : [],
     savings: false
 }
 
-var itemOfExpenditure = prompt('Введите обязательную статью расходов в этом месяце', );
-var cost = prompt('Во сколько обойдется?', );
 
-alert("Ваш бюджет на один день " +  money/30 );
+function shooseExpenses() {
+    for (let i = 0; i < 2; i++) {
+        let a = prompt('Введите обязательную статью расходов в этом месяце', ''),
+            b = prompt('Во сколько обойдется?', '');
+
+        if((typeof(a)) === 'string' && (typeof(a)) != null && (typeof(b)) != null 
+        && a != '' &&  b != '' && a.length < 50) {
+            console.log('done');
+            appData.expenses[a] = b;
+        } else {
+            i = i - 1;
+        }
+    }
+}
+shooseExpenses();
+
+
+appData.moneyPerDay = (appData.budget/30).toFixed();
+
+
+alert("Ежедневный бюджет: " + appData.moneyPerDay);
+
