@@ -1,23 +1,4 @@
-let options = {
-    width: 1024,
-    height: 1024,
-    name: 'test'
+let mass = [1,3,4,6,7];
+for(let key of mass) {
+    console.log(key);
 }
-
-console.log(options.name)
-
-options.bool = false;
-options.colors = {
-    border: 'black',
-    bg: 'red'
-}
-
-delete options.bool;
-
-console.log(options);
-
-for (let key in options) {
-    console.log('свойство ' + key + ' имеет значение ' + options[key]);
-}
-
-console.log(Object.keys(options).length)
