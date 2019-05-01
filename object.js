@@ -44,8 +44,28 @@ let arr = ['first',2,3,'four',5];
 //     console.log(key);
 // }
 
-let ans = prompt('', ''),
-    arr = [];
+// let ans = prompt('', ''),
+//     arr = [];
 
-    arr = ans.split(',');
+//     arr = ans.split(',');
+//     console.log(arr);
+
+// let arr = ['aawe', 'zzz', 'pp', 'rda'],
+//     i = arr.join(',');
+
+//     console.log(i);
+
+// let arr = ['df', 'kk', 'des', 'ajd'],
+//     i = arr.sort();
+
+//     console.log(arr);
+
+
+let arr = [1, 14, 4],
+    i = arr.sort(compareNum);
+
+    function compareNum(a,b){
+        return a-b;
+    }
+
     console.log(arr);
