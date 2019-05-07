@@ -1,3 +1,5 @@
+//принцип работы ООП
+
 let solder = {
     health: 400,
     armor: 100
