@@ -67,11 +67,19 @@ let appData = {
     },
     chooseIncome: function() {
         let items = prompt('Что принесет дополнительный доход? (Перечислите через запятую)');
+        if(tupeof(items) != 'string' || items === "" || typeof(items) == null ) {
+            console.log('Что-то пошло не так :(');
+        } else {
         appData.income = items.split(', ');
         appData.income.push(prompt('Может что-то еще?'));
         appData.income.sort();
+        
     }
 };
+
+for (let key in appData) {
+    console.log('Наша пргарамма включает в себя данные: ' + key + ' - ' + appData[key]);
+}
 
 
 
